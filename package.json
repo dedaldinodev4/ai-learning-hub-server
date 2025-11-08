@@ -1,0 +1,42 @@
+{
+  "name": "ai-learning-hub-server",
+  "version": "1.0.0",
+  "description": "Learning-hub with OpenIA",
+  "main": "index.js",
+  "homepage": "https://github.com/dedaldinodev4/ai-learning-hub-server#readme",
+  "bugs": {
+    "url": "https://github.com//dedaldinodev4ai-learning-hub-server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dedaldinodev4/ai-learning-hub-server.git"
+  },
+  "author": {
+    "name": "Dedaldino Daniel",
+    "email": "dedaldinodev4@gmail.com"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cookie": "^11.0.2",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.44.7",
+    "fastify": "^5.6.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.15.3",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/dotenv": "^8.2.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.10.0",
+    "drizzle-kit": "^0.31.6",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
