@@ -3,7 +3,7 @@ import { z } from "zod"
 import { db } from "../../lib/drizzle"
 import { hashPassword } from "../../utils/auth"
 import { generateToken } from "../../utils/jwt"
-import * as schema from "../../db/schema"
+import { SchemaUsers } from "../../db/schema"
 import { eq } from "drizzle-orm"
 
 
@@ -22,14 +22,14 @@ export const authRegister = async (app: FastifyInstance) => {
 
     const [existing] = await db
       .select()
-      .from(schema.users)
-      .where(eq(schema.users.email, email))
+      .from(SchemaUsers)
+      .where(eq(SchemaUsers.email, email))
 
     if (existing) {
       return reply.status(400).send({ message: `User already exist.` })
     }
 
-    const user = await db.insert(schema.users)
+    const user = await db.insert(SchemaUsers)
       .values({
         email,
         name,
@@ -39,12 +39,12 @@ export const authRegister = async (app: FastifyInstance) => {
     const { insertId } = user[0]
     const [newUser] = await db
       .select({
-        id: schema.users.id,
-        name: schema.users.name,
-        email: schema.users.email,
+        id: SchemaUsers.id,
+        name: SchemaUsers.name,
+        email: SchemaUsers.email,
       })
-      .from(schema.users)
-      .where(eq(schema.users.id, insertId))
+      .from(SchemaUsers)
+      .where(eq(SchemaUsers.id, insertId))
 
     const currentUser = {
       id: newUser.id,

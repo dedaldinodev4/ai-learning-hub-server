@@ -4,7 +4,7 @@ import {
 import { relations } from 'drizzle-orm';
 
 
-export const users = mysqlTable('_users', {
+export const SchemaUsers = mysqlTable('_users', {
   id: int('id').primaryKey().autoincrement(),
   name: varchar('name', { length: 256 }),
   email: varchar('email', { length: 256 }).unique().notNull(),
@@ -13,23 +13,23 @@ export const users = mysqlTable('_users', {
   created_at: timestamp('created_at').defaultNow()
 });
 
-export const usersRelations = relations(users, ({ many }) => ({
-  posts: many(topics),
+export const usersRelations = relations(SchemaUsers, ({ many }) => ({
+  posts: many(SchemaTopics),
 }));
 
-export const topics = mysqlTable('_topics', {
+export const SchemaTopics = mysqlTable('_topics', {
   id: int('id').primaryKey().autoincrement(),
   title: varchar('title', { length: 256}).notNull(),
   summary: varchar('summary', { length: 256 }).notNull(),
   quiz: json('quiz').notNull(),
   plan: varchar('plan', { length: 256 }).notNull(),
-  userId: int('userId').references(() => users.id).notNull(),
+  userId: int('userId').references(() => SchemaUsers.id).notNull(),
   created_at: timestamp('created_at').defaultNow()
 });
 
-export const topicsRelations = relations(topics, ({ one }) => ({
-  author: one(users, {
-    fields: [topics.userId],
-    references: [users.id],
+export const topicsRelations = relations(SchemaTopics, ({ one }) => ({
+  author: one(SchemaUsers, {
+    fields: [SchemaTopics.userId],
+    references: [SchemaUsers.id],
   }),
 }));
