@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "esnext",
     "lib": [
-      "ES2023"
+      "ESNext"
     ],
-    "module": "commonjs",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "paths": {
       "@/*": [
         "./src/*"

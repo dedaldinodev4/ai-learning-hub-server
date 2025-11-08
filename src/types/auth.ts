@@ -1,8 +1,8 @@
 
 export interface IUser {
-  id: string;
+  id: number;
   email: string;
-  name: string;
+  name: string | null;
 }
 
 export interface ICurrentUser {
