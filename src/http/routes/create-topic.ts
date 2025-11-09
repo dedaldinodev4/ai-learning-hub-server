@@ -1,10 +1,8 @@
 import { FastifyInstance } from "fastify"
 import { z } from "zod"
-import { db } from "../../lib/drizzle"
-import { hashPassword } from "../../utils/auth"
-import { generateToken } from "../../utils/jwt"
-import { SchemaTopics } from "../../db/schema"
 import { eq } from "drizzle-orm"
+import { db } from "../../lib/drizzle"
+import { SchemaTopics } from "../../db/schema"
 import { generateTopicSummary } from "../../services/openai.service"
 
 
