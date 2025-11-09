@@ -1,16 +1,16 @@
 CREATE TABLE `_topics` (
-	`id` serial AUTO_INCREMENT NOT NULL,
+	`id` int AUTO_INCREMENT NOT NULL,
 	`title` varchar(256) NOT NULL,
 	`summary` varchar(256) NOT NULL,
 	`quiz` json NOT NULL,
-	`plan` varchar(256) NOT NULL,
-	`userId` serial AUTO_INCREMENT NOT NULL,
+	`description` varchar(256),
+	`userId` int NOT NULL,
 	`created_at` timestamp DEFAULT (now()),
 	CONSTRAINT `_topics_id` PRIMARY KEY(`id`)
 );
 --> statement-breakpoint
 CREATE TABLE `_users` (
-	`id` serial AUTO_INCREMENT NOT NULL,
+	`id` int AUTO_INCREMENT NOT NULL,
 	`name` varchar(256),
 	`email` varchar(256) NOT NULL,
 	`password` varchar(256),

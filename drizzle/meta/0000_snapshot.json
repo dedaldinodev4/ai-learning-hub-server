@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "90b51a00-eda8-4486-b245-5d74df68be7b",
+  "id": "adb3951c-d42f-4450-b380-d2a44ce476c7",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "_topics": {
@@ -9,7 +9,7 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "int",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": true
@@ -35,19 +35,19 @@
           "notNull": true,
           "autoincrement": false
         },
-        "plan": {
-          "name": "plan",
+        "description": {
+          "name": "description",
           "type": "varchar(256)",
           "primaryKey": false,
-          "notNull": true,
+          "notNull": false,
           "autoincrement": false
         },
         "userId": {
           "name": "userId",
-          "type": "serial",
+          "type": "int",
           "primaryKey": false,
           "notNull": true,
-          "autoincrement": true
+          "autoincrement": false
         },
         "created_at": {
           "name": "created_at",
@@ -90,7 +90,7 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "int",
           "primaryKey": false,
           "notNull": true,
           "autoincrement": true
