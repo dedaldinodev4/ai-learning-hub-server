@@ -22,7 +22,7 @@ Powerful backend built with **Node**, **Drizzle**, and **MySQL**, providing REST
 Create a `.env` file in the root of the backend folder:
 
 ```bash
-DATABASE_URL="file:./dev.db"
+DATABASE_URL="your_database_url"
 OPENAI_API_KEY=your_openai_key
 JWT_SECRET=super_secret_key
 GOOGLE_CLIENT_ID=your_google_client_id
