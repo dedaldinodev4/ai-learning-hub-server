@@ -1,1 +1,0 @@
-ALTER TABLE `_topics` DROP COLUMN `title`;

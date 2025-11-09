@@ -22,7 +22,7 @@ export const SchemaTopics = mysqlTable('_topics', {
   title: varchar('title', { length: 256}).notNull(),
   summary: varchar('summary', { length: 256 }).notNull(),
   quiz: json('quiz').notNull(),
-  plan: varchar('plan', { length: 256 }).notNull(),
+  description: varchar('description', { length: 256 }),
   userId: int('userId').references(() => SchemaUsers.id).notNull(),
   created_at: timestamp('created_at').defaultNow()
 });
